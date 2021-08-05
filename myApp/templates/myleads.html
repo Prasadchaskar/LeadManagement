@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}My Leads{% endblock title %}
+
+{% block body %}
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.tabledit.js"></script>
+<div class="container mt-100">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>My Leads</h5>
+                </div>
+                <div class="card-block">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered" id="example-1">
+                            <thead>
+                                <tr>
+                                    <th style="display: none;">#</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Mobile</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Requirement</th>
+                                    <th>Department</th>
+                                    <th>Agent Id</th> 
+                                    <th>Status</th>                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for lead in leads %}
+                                <tr>
+                                    <th scope="row" style="display: none;">1</th>
+                                    <td class="tabledit-view-mode" style="cursor: pointer;"><span
+                                            class="tabledit-span">{{ lead.client_Name }} </span></td>
+                                    <td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span"
+                                            style="">{{ lead.business_Type }} </span></td>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.mobile_No }} </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.email }} </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.address }} </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.requirement }} </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.department }} </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.agent_id }} </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.status }} </span>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
