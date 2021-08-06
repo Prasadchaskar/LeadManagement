@@ -25,8 +25,8 @@
                                     <th>Address</th>
                                     <th>Requirement</th>
                                     <th>Department</th>
-                                    <th>Agent Id</th> 
-                                    <th>Status</th>                  
+                                    <th>Agent Id</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,18 +34,25 @@
                                 <tr>
                                     <th scope="row" style="display: none;">1</th>
                                     <td class="tabledit-view-mode" style="cursor: pointer;"><span
-                                            class="tabledit-span">{{ lead.client_Name }} </span></td>
+                                        class="tabledit-span">{{ lead.client_Name }}</span></td>
                                     <td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span"
                                             style="">{{ lead.business_Type }} </span></td>
-                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.mobile_No }} </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.mobile_No }}
+                                        </span>
                                     <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.email }} </span>
-                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.address }} </span>
-                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.requirement }} </span>
-                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.department }} </span>
-                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.agent_id }} </span>
-                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.status }} </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.address }}
+                                        </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.requirement }}
+                                        </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.department }}
+                                        </span>
+                                    <td class="tabledit-view-mode"><span class="tabledit-span">{{ lead.agent_id }}
+                                        </span>
+                                       
+                                    <td class="tabledit-view-mode"><span class="tabledit-span"><a href="{% url 'update' lead.id %}">{{ lead.status }}</a>  </span>
                                     </td>
                                 </tr>
+
                                 {% endfor %}
                             </tbody>
                         </table>

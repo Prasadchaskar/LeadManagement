@@ -273,3 +273,11 @@ th {
   padding: 10px 19px;
   cursor: pointer
 }
+
+
+    .card {
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 10px;
+    }

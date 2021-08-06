@@ -21,6 +21,6 @@ class Lead(models.Model):
     requirement         = models.TextField()
     department          = models.CharField(max_length=50)
     agent_id            = models.ForeignKey(Agent,on_delete=models.CASCADE)
-    status              = models.ForeignKey(Status,on_delete=models.CASCADE)
+    status              = models.ForeignKey(Status,on_delete=models.CASCADE,null=True)
     def __str__(self) -> str:
         return str(self.agent_id)

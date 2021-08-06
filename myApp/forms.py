@@ -7,4 +7,9 @@ from . models import Lead
 class LeadgenerationForm(ModelForm):
     class Meta:
         model = Lead
-        fields = '__all__'
+        fields = ['client_Name','business_Type','mobile_No','email','address','requirement','department','agent_id']
+    
+class UpdateStatus(ModelForm):
+     class Meta:
+        model = Lead
+        fields = ['status']

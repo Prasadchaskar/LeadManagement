@@ -1,11 +1,10 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, request
 from . models import Lead
-from . forms import LeadgenerationForm
-# Create your views here.
+from . forms import LeadgenerationForm,UpdateStatus
+# from django.views.generic import UpdateView# Create your views here.
 
-def home(request):
-    return render(request,'base.html')
 
 
 def leadGeneartion(request):
@@ -22,4 +21,21 @@ def leadGeneartion(request):
 
 def myLeads(request):
     leads = Lead.objects.all()
-    return render(request,'myleads.html',{'leads':leads})
+    return render(request,'myleads.html' , {'leads':leads})
+
+
+
+def updateLead(request,id):
+    obj= get_object_or_404(Lead, id=id)
+        
+    form = UpdateStatus(request.POST or None, instance= obj)
+    context= {'form': form}
+
+    if form.is_valid():
+        obj= form.save(commit= False)
+
+        obj.save()
+        return redirect('mylead')
+    else:
+        context= {'form': form}
+    return render(request,'updateStatus.html' , context)
