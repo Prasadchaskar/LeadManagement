@@ -1,8 +1,10 @@
-from django.db.models.base import Model
-from django.forms import ModelForm
-from django.forms.models import model_to_dict
-from . models import Lead
 
+from django.forms import ModelForm
+from . models import Lead
+from django import forms
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from . models import Agent
 
 class LeadgenerationForm(ModelForm):
     class Meta:
@@ -13,3 +15,11 @@ class UpdateStatus(ModelForm):
      class Meta:
         model = Lead
         fields = ['status']
+
+
+class UserRegisterForm(UserCreationForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
