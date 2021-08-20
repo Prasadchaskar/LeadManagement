@@ -129,9 +129,7 @@
   <div class="card">
     <form method='POST'> {% csrf_token %}
       <h2 class="title"> Log in</h2>
-      <p class="subtitle">Don't have an account? <a href="{% url 'register' %}"> sign Up</a></p>
-      <p class="or"><span>or</span></p>
-
+    
       <div class="email-login">
         <label for="username"> <b>Username</b></label>
         {{ form.username }}
@@ -140,7 +138,6 @@
       </div>
 
       <button class="btn btn-outline-info cta-btn" type="submit">Login</button>
-      <a class="forget-pass" href="{% url 'register' %}">Dont Have Account?</a>
     </form>
   </div>
 

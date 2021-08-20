@@ -5,6 +5,7 @@
 {% block body %}
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.tabledit.js"></script>
+{% if user.is_authenticated %}
 <div class="container mt-100">
     <div class="row">
         <div class="col-md-12">
@@ -62,5 +63,17 @@
         </div>
     </div>
 </div>
-
+{% else %}
+<div class="container my-5">
+    <div class="card text-center">
+        <div class="card-header">
+          Login Error
+        </div>
+        <div class="card-body">
+          <p class="card-text">Please log in to your account</p>
+          <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+        </div>
+      </div>
+</div>
+{% endif %}
 {% endblock body %}

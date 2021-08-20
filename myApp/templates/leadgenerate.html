@@ -5,7 +5,7 @@ Lead Generation
 {% endblock title %}
 
 {% block body %}
-
+{% if user.is_authenticated %}
 <div class="container-fluid px-0" id="bg-div">
     <div class="row justify-content-center">
         <div class="col-lg-9 col-12">
@@ -54,6 +54,19 @@ Lead Generation
         </div>
     </div>
 </div>
+{% else %}
+<div class="container my-5">
+    <div class="card text-center">
+        <div class="card-header">
+          Login Error
+        </div>
+        <div class="card-body">
+          <p class="card-text">Please log in to your account</p>
+          <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+        </div>
+      </div>
+</div>
+{% endif %}
 {% endblock body %}
 
 

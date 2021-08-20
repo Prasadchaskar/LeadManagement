@@ -280,4 +280,132 @@ th {
       background-color: #f4f4f4;
       padding: 20px;
       margin-bottom: 10px;
+    }  
+    .boxOne, .boxTwo {
+      width: 480px;
+      height: 600px;
+      background-color: #FFFFFF;
+      display:inline-block;
+      border-radius: 15px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+      margin: 20px 40px 0px 0px;
+      
     }
+    
+    .boxes {
+        display: block;
+        margin: 50px auto;
+        width: 1050px;
+    }
+    
+    .boxOne:hover, .boxTwo:hover {
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+    
+    .boxOne img, .boxTwo img {
+        display: block;
+        margin: 50px auto;
+        width: 200px;
+    }
+    
+    h1 {
+      font-family: Helvetica;
+      font-weight: 900;
+      color: #313131;
+      text-align: center;
+      font-size: 36px;
+    }
+    
+    p.one {
+      font-size: 22px;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      width: 300px;
+      font-family: Helvetica;
+    }
+    
+    p.two {
+      font-size: 22px;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      width: 350px;
+      font-family: Helvetica;
+    }
+    
+    button {
+      width: 200px;
+      height: 60px;
+      border: 0px;
+      border-color: none;
+      border-radius: 30px;
+      display: block;
+      margin: 20px auto;
+      transition: all .2s ease-in-out;
+    } 
+    
+    button.positive {
+        background-color: #29CD18;
+        color: white;
+        font-family: Helvetica;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 20px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    }
+    
+    button.danger {
+        background-color: #E3302A;
+        color: white;
+        font-family: Helvetica;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 20px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    }
+    
+    button:hover{
+      transform: scale(1.1);
+    }
+    
+    p.footerText {
+      color: #313131;
+      opacity: 0.3;
+      font-weight: bold;
+      font-size: 20px;
+      font-family: Helvetica;
+      text-align: center;
+    }
+    
+    a {
+      opacity: 0.9;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    @keyframes shake {
+      10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+    
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+    
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
+    }
+    
+    
